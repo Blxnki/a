@@ -1,0 +1,297 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GENERAL */
+body {
+    font-family: 'Creepster', 'Arial', sans-serif;
+    background: black url('blood-texture.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #b30000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: url('skull-cursor.png'), auto;
+}
+
+/* CABECERA INFERNAL */
+header {
+    width: 100%;
+    background: linear-gradient(180deg, black, #200000);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid #8b0000;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-shadow: 0 0 15px red, 0 0 30px darkred;
+    animation: glitch 0.3s infinite alternate;
+}
+
+/* MENÚ ESTILO DEATH */
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #b30000;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 30px red;
+    animation: glitch 0.2s infinite alternate;
+}
+
+/* EFECTO GLITCH */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 5px red, -2px -2px 5px darkred; }
+    50% { text-shadow: -3px -3px 6px red, 3px 3px 6px darkred; }
+    100% { text-shadow: 2px -2px 5px red, -2px 2px 5px darkred; }
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    max-width: 1000px;
+    width: 90%;
+    margin: 30px auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+    border: 5px solid #b30000;
+    position: relative;
+}
+
+/* TÍTULOS CON EFECTO SANGRIENTO */
+h3 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #b30000;
+    font-family: 'Creepster', sans-serif;
+    text-shadow: 0 0 15px red;
+    position: relative;
+}
+
+/* EFECTO GOTEO DE SANGRE */
+h3::after {
+    content: " ";
+    width: 100%;
+    height: 10px;
+    background: red;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    filter: blur(2px);
+    animation: bloodDrip 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes bloodDrip {
+    from { transform: translateY(0); }
+    to { transform: translateY(5px); }
+}
+
+/* PÁRRAFOS MACABROS */
+p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+/* GALERÍA (SE MANTIENE IGUAL) */
+.galeria {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+    height: 100vh;
+    align-items: center;
+}
+
+.galeria-contenedor {
+    display: flex;
+    gap: 10px;
+    animation: slide 20s linear infinite;
+    width: max-content;
+}
+
+.galeria img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.galeria2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+}
+
+.galeria-contenedor2 {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: slide 20s linear infinite;
+}
+
+.galeria2 img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Animación para mover la galería */
+@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-40%); }
+}
+
+/* PIE DE PÁGINA SATÁNICO */
+footer {
+    width: 100%;
+    text-align: center;
+    background: #200000;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 5px solid #8b0000;
+    font-family: 'Creepster', sans-serif;
+    text-shadow: 0 0 15px red;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        height: 100px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    main {
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        height: 100px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .galeria img {
+        height: 80px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .galeria img {
+        height: 80px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
