@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+
+    grid-template-areas: 
+        'header''header' 50px
+        'main''main' 100px
+        'footer''footer' 100px/
+        1fr        1fr;
+    ;
+    
+}
+
+/* cabecera */
+header {
+    /* background-color: #333;
+    color: #fff;
+    padding: 10px; */
+    grid-area: 'header';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000; /* Para que esté por encima de otros elementos */
+}
+
+/* menu */
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid white; */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.left{
+    display: flex;
+    justify-content: end;
+}
+
+.right{
+    display: flex;
+}
+
+/* Enlace */
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #444;
+}
+
+/* cuerpo */
+
+main{
+    grid-area: 'main';
+}
+
+.img1{
+    background-image: url(/img/Wall-of-Deaths.png);/* Imagen de fondo */
+    background-attachment: fixed;/* La imagen permanece fija al desplazarse */
+    background-size: cover;/* Ajusta la imagen para cubrir el contenedor */
+    background-position: center;/* Centra la imagen */
+    height: 100vh;/* Ocupa toda la altura de la ventana */
+}
+
+.img2{
+    height: 100vh;
+    background-image: url(/img/slipknot_2025.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+h3{
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    padding: 20px;
+    max-width: 1500px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+.galeria {
+    width: 100%;/* Ocupa todo el ancho */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;/* Oculta el contenido que se desborda */
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+    height: 100vh;/* Altura igual a la ventana */
+    align-items: center;
+}
+
+.galeria-contenedor {
+    display: flex;
+    gap: 10px;
+    animation: slide 20s linear infinite;/* Aplica la animación de desplazamiento */    
+    width: max-content;/* Ajusta el ancho al contenido */
+}
+
+.galeria img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* SEGUNDA GALERÍA */
+.galeria2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+}
+
+.galeria-contenedor2 {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: slide 20s linear infinite;
+}
+
+.galeria2 img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Animación para mover la galería de derecha a izquierda */
+@keyframes slide {
+    from {
+        transform: translateX(0);/* Inicia en la posición original */
+    }
+    to {
+        transform: translateX(-40%);/* Desplaza el contenido hacia la izquierda */
+    }
+}
+
+/* footer */
+
+footer {
+    grid-area: 'footer';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .galeria img {
+        height: 100px;
+    }
+
+    h3, div {
+        padding: 10px;
+    }
+
+    .intro-text {
+        padding: 15px;
+        max-width: 90%;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        height: 80px;
+    }
+
+    .intro-text {
+        padding: 10px;
+        max-width: 95%;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+    }
+
+}
