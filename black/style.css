@@ -1,0 +1,258 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CUERPO OSCURO Y MALEVOLENTE */
+body {
+    font-family: 'Blackletter', 'Arial', sans-serif;
+    background-color: #050505; /* Negro absoluto */
+    color: #C10000; /* Rojo sangre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CABECERA MACABRA */
+header {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(20, 0, 0, 0.8));
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #740000; /* Rojo oscuro */
+    text-shadow: 0 0 5px red;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #C10000;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-family: 'Blackletter', serif;
+}
+
+nav a:hover {
+    color: #FF0000; /* Rojo brillante */
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+/* CONTENIDO MALEVOLENTE */
+main {
+    max-width: 1000px;
+    width: 90%;
+    margin: 30px auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    border: 3px solid #740000;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #C10000;
+    font-family: 'Blackletter', serif;
+    text-shadow: 0 0 10px red;
+}
+
+/* GALERÍA ORIGINAL */
+.galeria {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+    height: 100vh;
+    align-items: center;
+}
+
+.galeria-contenedor {
+    display: flex;
+    gap: 10px;
+    animation: slide 20s linear infinite;
+    width: max-content;
+}
+
+.galeria img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* SEGUNDA GALERÍA */
+.galeria2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+}
+
+.galeria-contenedor2 {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: slide 20s linear infinite;
+}
+
+.galeria2 img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Animación para mover la galería de derecha a izquierda */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-40%);
+    }
+}
+
+/* PIE DE PÁGINA MALDITO */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 3px solid #740000;
+    font-family: 'Blackletter', serif;
+    text-shadow: 0 0 10px red;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        height: 100px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    main {
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        height: 100px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .galeria img {
+        height: 80px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .galeria img {
+        height: 80px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
